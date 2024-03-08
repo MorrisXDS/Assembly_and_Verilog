@@ -1,6 +1,6 @@
-# Notice
+# Disclaimer
 
-This repository contains labs and projects completed by Morris Sun for **ECE243 Computer Organization** at the University of Toronto's Electrical and Computer Engineering department. Any use of this repository for school lab submissions and other purposes **without my consent** is considered **plagiarism** and will be subject to scrutiny by the school.
+This repository contains labs and projects completed by Morris Sun for **ECE243 Computer Organization** at the University of Toronto's Electrical and Computer Engineering department. Any use of this repository for school lab submissions and/or other purposes is considered **plagiarism** and will be subject to scrutiny by the school.
 
 # ECE243
 
