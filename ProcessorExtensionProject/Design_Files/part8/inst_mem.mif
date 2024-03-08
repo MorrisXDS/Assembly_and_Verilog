@@ -1,0 +1,93 @@
+WIDTH = 16;
+DEPTH = 4096;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+0		: 3a10;		% mvt  r5, #0x0010 %
+1		: 5a00;		% add  r5, #0x0000 %
+2		: 30f0;		% mvt  r0, #0x00f0 %
+3		: 50f0;		% add  r0, #0x00f0 %
+4		: 2e2c;		% bl   0x31 %
+5		: b005;		% push r0 %
+6		: 30ff;		% mvt  r0, #0x00ff %
+7		: 50ff;		% add  r0, #0x00ff %
+8		: 2e1f;		% bl   0x28 %
+9		: 9005;		% pop  r0 %
+a		: 3230;		% mvt  r1, #0x0030 %
+b		: 5200;		% add  r1, #0x0000 %
+c		: 8201;		% ld   r1, [r1] %
+d		: 3410;		% mvt  r2, #0x0010 %
+e		: 5400;		% add  r2, #0x0000 %
+f		: a202;		% st   r1, [r2] %
+10		: 0401;		% mv   r2, r1 %
+11		: d20f;		% and  r1, #0x000f %
+12		: e5a5;		% lsr  r2, #0x5 %
+13		: d403;		% and  r2, #0x0003 %
+14		: f400;		% cmp  r2, #0x0000 %
+15		: 2402;		% bne  0x18 %
+16		: e101;		% lsl  r0, r1 %
+17		: 2009;		% b    0x21 %
+18		: f401;		% cmp  r2, #0x0001 %
+19		: 2402;		% bne  0x1c %
+1a		: e121;		% lsr  r0, r1 %
+1b		: 2005;		% b    0x21 %
+1c		: f402;		% cmp  r2, #0x0002 %
+1d		: 2402;		% bne  0x20 %
+1e		: e141;		% asr  r0, r1 %
+1f		: 2001;		% b    0x21 %
+20		: e161;		% ror  r0, r1 %
+21		: 2e0f;		% bl   0x31 %
+22		: 2e05;		% bl   0x28 %
+23		: f000;		% cmp  r0, #0x0000 %
+24		: 23dd;		% beq  0x2 %
+25		: f1ff;		% cmp  r0, #0xffff %
+26		: 23db;		% beq  0x2 %
+27		: 21e2;		% b    0xa %
+28		: b205;		% push r1 %
+29		: 32ff;		% mvt  r1, #0x00ff %
+2a		: 52ff;		% add  r1, #0x00ff %
+2b		: 7201;		% sub  r1, #0x0001 %
+2c		: 25fe;		% bne  0x2b %
+2d		: 9205;		% pop  r1 %
+2e		: 7001;		% sub  r0, #0x0001 %
+2f		: 25f8;		% bne  0x28 %
+30		: 0e06;		% mv   r7, r6 %
+31		: b205;		% push r1 %
+32		: b405;		% push r2 %
+33		: b605;		% push r3 %
+34		: 3420;		% mvt  r2, #0x0020 %
+35		: 5400;		% add  r2, #0x0000 %
+36		: 1600;		% mv   r3, #0x0000 %
+37		: 0200;		% mv   r1, r0 %
+38		: e323;		% lsr  r1, r3 %
+39		: d20f;		% and  r1, #0x000f %
+3a		: 5245;		% add  r1, #0x0045 %
+3b		: 8201;		% ld   r1, [r1] %
+3c		: a202;		% st   r1, [r2] %
+3d		: 5401;		% add  r2, #0x0001 %
+3e		: 5604;		% add  r3, #0x0004 %
+3f		: f610;		% cmp  r3, #0x0010 %
+40		: 25f6;		% bne  0x37 %
+41		: 9605;		% pop  r3 %
+42		: 9405;		% pop  r2 %
+43		: 9205;		% pop  r1 %
+44		: 0e06;		% mv   r7, r6 %
+45		: 003f;		% data %
+46		: 0006;		% data %
+47		: 005b;		% data %
+48		: 004f;		% data %
+49		: 0066;		% data %
+4a		: 006d;		% data %
+4b		: 007d;		% data %
+4c		: 0007;		% data %
+4d		: 007f;		% data %
+4e		: 0067;		% data %
+4f		: 0077;		% data %
+50		: 007c;		% data %
+51		: 0039;		% data %
+52		: 005e;		% data %
+53		: 0079;		% data %
+54		: 0071;		% data %
+END;

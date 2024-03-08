@@ -1,0 +1,87 @@
+WIDTH = 16;
+DEPTH = 4096;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+0		: 3a10;		% mvt  r5, #0x0010 %
+1		: 5a00;		% add  r5, #0x0000 %
+2		: 30f0;		% mvt  r0, #0x00f0 %
+3		: 50f0;		% add  r0, #0x00f0 %
+4		: 2e26;		% bl   0x2b %
+5		: 2e1e;		% bl   0x24 %
+6		: 3230;		% mvt  r1, #0x0030 %
+7		: 5200;		% add  r1, #0x0000 %
+8		: 8201;		% ld   r1, [r1] %
+9		: 3410;		% mvt  r2, #0x0010 %
+a		: 5400;		% add  r2, #0x0000 %
+b		: a202;		% st   r1, [r2] %
+c		: 0401;		% mv   r2, r1 %
+d		: d20f;		% and  r1, #0x000f %
+e		: e5a5;		% lsr  r2, #0x5 %
+f		: d403;		% and  r2, #0x0003 %
+10		: f400;		% cmp  r2, #0x0000 %
+11		: 2402;		% bne  0x14 %
+12		: e101;		% lsl  r0, r1 %
+13		: 2009;		% b    0x1d %
+14		: f401;		% cmp  r2, #0x0001 %
+15		: 2402;		% bne  0x18 %
+16		: e121;		% lsr  r0, r1 %
+17		: 2005;		% b    0x1d %
+18		: f402;		% cmp  r2, #0x0002 %
+19		: 2402;		% bne  0x1c %
+1a		: e141;		% asr  r0, r1 %
+1b		: 2001;		% b    0x1d %
+1c		: e161;		% ror  r0, r1 %
+1d		: 2e0d;		% bl   0x2b %
+1e		: 2e05;		% bl   0x24 %
+1f		: f000;		% cmp  r0, #0x0000 %
+20		: 23e1;		% beq  0x2 %
+21		: f1ff;		% cmp  r0, #0xffff %
+22		: 23df;		% beq  0x2 %
+23		: 21e2;		% b    0x6 %
+24		: b205;		% push r1 %
+25		: 32ff;		% mvt  r1, #0x00ff %
+26		: 52ff;		% add  r1, #0x00ff %
+27		: 7201;		% sub  r1, #0x0001 %
+28		: 25fe;		% bne  0x27 %
+29		: 9205;		% pop  r1 %
+2a		: 0e06;		% mv   r7, r6 %
+2b		: b205;		% push r1 %
+2c		: b405;		% push r2 %
+2d		: b605;		% push r3 %
+2e		: 3420;		% mvt  r2, #0x0020 %
+2f		: 5400;		% add  r2, #0x0000 %
+30		: 1600;		% mv   r3, #0x0000 %
+31		: 0200;		% mv   r1, r0 %
+32		: e323;		% lsr  r1, r3 %
+33		: d20f;		% and  r1, #0x000f %
+34		: 523f;		% add  r1, #0x003f %
+35		: 8201;		% ld   r1, [r1] %
+36		: a202;		% st   r1, [r2] %
+37		: 5401;		% add  r2, #0x0001 %
+38		: 5604;		% add  r3, #0x0004 %
+39		: f610;		% cmp  r3, #0x0010 %
+3a		: 25f6;		% bne  0x31 %
+3b		: 9605;		% pop  r3 %
+3c		: 9405;		% pop  r2 %
+3d		: 9205;		% pop  r1 %
+3e		: 0e06;		% mv   r7, r6 %
+3f		: 003f;		% data %
+40		: 0006;		% data %
+41		: 005b;		% data %
+42		: 004f;		% data %
+43		: 0066;		% data %
+44		: 006d;		% data %
+45		: 007d;		% data %
+46		: 0007;		% data %
+47		: 007f;		% data %
+48		: 0067;		% data %
+49		: 0077;		% data %
+4a		: 007c;		% data %
+4b		: 0039;		% data %
+4c		: 005e;		% data %
+4d		: 0079;		% data %
+4e		: 0071;		% data %
+END;
